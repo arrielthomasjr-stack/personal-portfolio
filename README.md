@@ -16,9 +16,9 @@ Replace everything in *italics* or (parentheses) as you go. Update this file at 
 |------|------|---------------------------|
 | Home | `index.html` | Main page |
 | Projects | `projects.html` | Projects I have created |
-| Skills | `skills.html` | Skills I have learned |
+| Skills | `skills.html` | Skills I have learned organized in a table |
 | Resume | `resume.html` | Know my work history |
-| Contact | `contact.html` | Find my email address |
+| Contact | `contact.html` | Contact form |
 
 Wireframes: see the [`planning/`](planning/) folder.
 

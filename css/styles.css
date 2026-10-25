@@ -20,18 +20,27 @@
    else. The palette generator on the course project page writes this block
    for you and checks the color contrast. */
 :root {
-  --color-primary: #2b4c7e;     /* header background, buttons */
-  --color-on-primary: #ffffff;  /* text that sits on --color-primary */
-  --color-accent: #b4462b;      /* links and highlights */
-  --color-bg: #f7f8fa;          /* page background */
-  --color-surface: #ffffff;     /* cards, tables, forms */
-  --color-text: #1b2330;        /* body text */
-  --color-muted: #5c6675;       /* captions, secondary text, borders */
-  --color-error: #b3261e;       /* form errors */
+  --color-primary: #2b4c7e;
+  /* header background, buttons */
+  --color-on-primary: #ffffff;
+  /* text that sits on --color-primary */
+  --color-accent: #b4462b;
+  /* links and highlights */
+  --color-bg: #f7f8fa;
+  /* page background */
+  --color-surface: #ffffff;
+  /* cards, tables, forms */
+  --color-text: #1b2330;
+  /* body text */
+  --color-muted: #5c6675;
+  /* captions, secondary text, borders */
+  --color-error: #b3261e;
+  /* form errors */
 
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-heading: Georgia, "Times New Roman", Times, serif;
-  --font-size-base: 1.0625rem;  /* 17px */
+  --font-size-base: 1.0625rem;
+  /* 17px */
   --line-height: 1.6;
 
   --space-xs: 0.25rem;
@@ -40,7 +49,8 @@
   --space-l: 1.5rem;
   --space-xl: 2.5rem;
   --radius: 8px;
-  --max-width: 60rem;           /* keeps lines of text readable */
+  --max-width: 60rem;
+  /* keeps lines of text readable */
 }
 
 
@@ -100,10 +110,12 @@ a:focus-visible {
 /* Images (box model): never wider than the box that contains them.
    height: auto keeps the width-to-height ratio from the HTML attributes. */
 img {
+
   display: block;
-  max-width: 100%;
+  max-width: 30%;
   height: auto;
 }
+
 
 /* "Skip to main content" link: a box with no height until it receives
    keyboard focus, then it opens up at the top of the page */
