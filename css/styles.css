@@ -110,12 +110,15 @@ a:focus-visible {
 /* Images (box model): never wider than the box that contains them.
    height: auto keeps the width-to-height ratio from the HTML attributes. */
 img {
-
   display: block;
-  max-width: 30%;
+  max-width: 100%;
   height: auto;
 }
 
+/* The headshot on the home page: shown smaller than full width */
+.headshot {
+  max-width: 30%;
+}
 
 /* "Skip to main content" link: a box with no height until it receives
    keyboard focus, then it opens up at the top of the page */
