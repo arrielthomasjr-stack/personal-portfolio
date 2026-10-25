@@ -117,7 +117,7 @@ img {
 
 /* The headshot on the home page: shown smaller than full width */
 .headshot {
-  max-width: 30%;
+  max-width: 15rem;
 }
 
 /* "Skip to main content" link: a box with no height until it receives
