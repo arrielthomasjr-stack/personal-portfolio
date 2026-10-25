@@ -1,0 +1,314 @@
+/* ==========================================================================
+   Your Site Name: main stylesheet
+   One stylesheet for every page. The sections follow the course milestones:
+
+     1. Design tokens ............ Milestone 3
+     2. Base styles .............. Milestone 3
+     3. Layout: header, nav ...... Milestone 3
+     4. Components ............... Milestone 3
+     5. Tables ................... Milestone 4
+     6. Forms .................... Milestone 4
+
+   The layout uses only the box model: main is a centered column (max-width
+   plus auto margins), nav links are display: inline-block with padding, and
+   cards are ordinary blocks stacked with a margin between them.
+   ========================================================================== */
+
+
+/* 1. Design tokens (Milestone 3) -------------------------------------------
+   Change colors, fonts and spacing HERE, then use var(--name) everywhere
+   else. The palette generator on the course project page writes this block
+   for you and checks the color contrast. */
+:root {
+  --color-primary: #2b4c7e;     /* header background, buttons */
+  --color-on-primary: #ffffff;  /* text that sits on --color-primary */
+  --color-accent: #b4462b;      /* links and highlights */
+  --color-bg: #f7f8fa;          /* page background */
+  --color-surface: #ffffff;     /* cards, tables, forms */
+  --color-text: #1b2330;        /* body text */
+  --color-muted: #5c6675;       /* captions, secondary text, borders */
+  --color-error: #b3261e;       /* form errors */
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", Times, serif;
+  --font-size-base: 1.0625rem;  /* 17px */
+  --line-height: 1.6;
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2.5rem;
+  --radius: 8px;
+  --max-width: 60rem;           /* keeps lines of text readable */
+}
+
+
+/* 2. Base styles (Milestone 3) ---------------------------------------------- */
+
+/* width and max-width include padding and border, so boxes add up as expected */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: var(--space-l) 0 var(--space-s);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-thickness: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Images (box model): never wider than the box that contains them.
+   height: auto keeps the width-to-height ratio from the HTML attributes. */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* "Skip to main content" link: a box with no height until it receives
+   keyboard focus, then it opens up at the top of the page */
+.skip-link {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.skip-link:focus {
+  height: auto;
+  padding: var(--space-s) var(--space-m);
+}
+
+
+/* 3. Layout: header, nav, main, footer (Milestone 3) ----------------------- */
+.site-header {
+  padding: var(--space-s) var(--space-m);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.site-header :focus-visible {
+  outline-color: var(--color-on-primary);
+}
+
+/* The logo and the nav are inline-block boxes: they sit side by side when
+   there is room and the nav drops to the next line when there is not. */
+.logo {
+  display: inline-block;
+  margin-right: var(--space-l);
+  padding: var(--space-s) 0;
+  color: var(--color-on-primary);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: inline-block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li {
+  display: inline-block;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: var(--space-s) var(--space-m);
+  color: var(--color-on-primary);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+/* The link for the page you are on (aria-current="page" in the HTML) */
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+/* A centered column: max-width stops it growing, auto margins center it */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-m);
+}
+
+.site-footer {
+  padding: var(--space-l) var(--space-m);
+  border-top: 1px solid var(--color-muted);
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+
+/* 4. Components (Milestone 3) ---------------------------------------------- */
+.tagline {
+  color: var(--color-muted);
+  font-size: 1.2rem;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each card is a block box: full width, stacked, a margin between cards */
+.card {
+  margin-bottom: var(--space-m);
+  padding: var(--space-m);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+figure {
+  margin: var(--space-l) 0;
+}
+
+figcaption {
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-s) var(--space-l);
+  border: 0;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* TODO Milestone 3: add your own components here (hero banner, badges...). */
+
+
+/* 5. Tables (Milestone 4) ---------------------------------------------------
+   The wrapper lets a wide table scroll sideways inside its own box instead
+   of stretching the whole page.
+   TODO Milestone 4: style your data table. Ideas:
+     - padding on th and td, and border-collapse: collapse on the table
+     - a bottom border on each row, or zebra stripes: tbody tr:nth-child(even)
+     - caption { text-align: left; font-weight: 700; }
+     - right-align numbers: td.num { text-align: right; } */
+.table-wrap {
+  overflow-x: auto;
+}
+
+
+/* 6. Forms (Milestone 4) --------------------------------------------------- */
+.field {
+  margin-bottom: var(--space-m);
+}
+
+label {
+  font-weight: 700;
+}
+
+/* Inside a .field the label is a block, so the control sits under it */
+.field label {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-s);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+/* Radio buttons and checkboxes sit next to their labels, not full width */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: var(--space-xs);
+}
+
+fieldset {
+  margin: 0 0 var(--space-m);
+  padding: var(--space-m);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+}
+
+legend {
+  padding: 0 var(--space-xs);
+  font-weight: 700;
+}
+
+/* Shown only after the visitor has interacted with the field */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border: 2px solid var(--color-error);
+}
+
+/* TODO Milestone 4: style option rows, hints and error messages. */
