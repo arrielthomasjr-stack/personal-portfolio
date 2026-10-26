@@ -115,9 +115,16 @@ img {
   height: auto;
 }
 
+.banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-l);
+}
+
 /* The headshot on the home page: shown smaller than full width */
 .headshot {
   max-width: 15rem;
+  margin: 0 auto var(--space-l);
 }
 
 /* "Skip to main content" link: a box with no height until it receives
