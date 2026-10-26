@@ -1,6 +1,6 @@
 # personal-portfolio
 
-> Online resume to show recruiters who I am, what I can do and what I have built, to showcase my skills and abilities on a website.
+> Online resume to show recruiters who I am, what I can do and what I have built, to showcase my skills and abilities so recuriters can contact me.
 
 - **Live site:** https://arrielthomasjr.github.io/personal-portfolio/
 - **Theme:** Portfolio
@@ -14,7 +14,7 @@ Replace everything in *italics* or (parentheses) as you go. Update this file at 
 
 | Page | File | What a visitor does there |
 |------|------|---------------------------|
-| Home | `index.html` | Main page |
+| Home | `index.html` | Main page that gives a bit of who I am |
 | Projects | `projects.html` | Projects I have created |
 | Skills | `skills.html` | Skills I have learned organized in a table |
 | Resume | `resume.html` | Know my work history |
