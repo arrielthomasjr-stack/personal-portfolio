@@ -1,6 +1,6 @@
 # personal-portfolio
 
-> Online resume to show recruiters who I am, what I can do and what I have built, to showcase my skills and abilities so recuriters can contact me.
+> Online resume to show recruiters who I am, what I can do and what I have built, to showcase my skills and abilities so recruiters can contact me.
 
 - **Live site:** https://arrielthomasjr.github.io/personal-portfolio/
 - **Theme:** Portfolio
